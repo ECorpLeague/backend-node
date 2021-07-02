@@ -1,0 +1,161 @@
+{
+    "tournament": {
+        "id": "dbb22",
+        "name": "Motorola Season 5",
+        "startDate": "24/05/2020",
+        "rounds": [
+            {
+                "id": "WINNER_SEMI",
+                "type": "Winnerbracket",
+                "matches": [
+                    {
+                        "firstTeam": {
+                            "name": "team #1",
+                            "score": 2
+                        },
+                        "secondTeam": {
+                            "name": "teamName #2",
+                            "score": 1
+                        },
+                        "bo": "BestOf.three"
+                    },
+                    {
+                        "firstTeam": {
+                            "name": "team #1",
+                            "score": 2
+                        },
+                        "secondTeam": {
+                            "name": "teamName #2",
+                            "score": 1
+                        },
+                        "bo": "BestOf.three"
+                    }
+                ]
+            },
+            {
+                "id": "WINNER_FINAL",
+                "type": "Winnerbracket",
+                "matches": [
+                    {
+                        "firstTeam": {
+                            "name": "team #1",
+                            "score": 2
+                        },
+                        "secondTeam": {
+                            "name": "team #2",
+                            "score": 1
+                        },
+                        "bo": "BestOf.three"
+                    }
+                ]
+            },
+            {
+                "id": "LOOSER_PRE_SEMI",
+                "type": "Winnerbracket",
+                "matches": [
+                    {
+                        "firstTeam": {
+                            "name": "team #1",
+                            "score": 2
+                        },
+                        "secondTeam": {
+                            "name": "team #2",
+                            "score": 1
+                        },
+                        "bo": "BestOf.three"
+                    },
+                    {
+                        "firstTeam": {
+                            "name": "team #1",
+                            "score": 2
+                        },
+                        "secondTeam": {
+                            "name": "team #2",
+                            "score": 1
+                        },
+                        "bo": "BestOf.three"
+                    }
+                ]
+            },
+            {
+                "id": "LOOSER_SEMI",
+                "type": "Loserbracket",
+                "matches": [
+                    {
+                        "firstTeam": {
+                            "name": "team #1",
+                            "score": 2
+                        },
+                        "secondTeam": {
+                            "name": "team #2",
+                            "score": 1
+                        },
+                        "bo": "BestOf.three"
+                    },
+                    {
+                        "firstTeam": {
+                            "name": "team #1",
+                            "score": 2
+                        },
+                        "secondTeam": {
+                            "name": "team #2",
+                            "score": 1
+                        },
+                        "bo": "BestOf.three"
+                    }
+                ]
+            },
+            {
+                "id": "LOOSER_FINAL",
+                "type": "Loserbracket",
+                "matches": [
+                    {
+                        "firstTeam": {
+                            "name": "team #1",
+                            "score": 2
+                        },
+                        "secondTeam": {
+                            "name": "team #2",
+                            "score": 1
+                        },
+                        "bo": "BestOf.three"
+                    }
+                ]
+            },
+            {
+                "id": "PRE_FINAL",
+                "type": "Loserbracket",
+                "matches": [
+                    {
+                        "firstTeam": {
+                            "name": "team #1",
+                            "score": 2
+                        },
+                        "secondTeam": {
+                            "name": "team #2",
+                            "score": 1
+                        },
+                        "bo": "BestOf.three"
+                    }
+                ]
+            },
+            {
+                "id": "FINAL",
+                "type": "Final",
+                "matches": [
+                    {
+                        "firstTeam": {
+                            "name": "team #1",
+                            "score": 2
+                        },
+                        "secondTeam": {
+                            "name": "team #2",
+                            "score": 1
+                        },
+                        "bo": "BestOf.three"
+                    }
+                ]
+            }
+        ]
+    }
+}
