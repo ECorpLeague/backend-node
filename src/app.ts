@@ -4,10 +4,6 @@ import lusca from 'lusca';
 
 // Controllers (route handlers)
 import * as apiController from './controllers/api';
-import { ApolloServer, gql } from 'apollo-server-express';
-
-
-
 
 // Create Express server
 const app = express();
@@ -23,6 +19,5 @@ app.use(lusca.xssProtection(true));
  * API examples routes.
  */
 app.get('/test', apiController.getTestCheck);
-
 
 export default app;

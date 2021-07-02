@@ -3,12 +3,14 @@
         "module": "commonjs",
         "esModuleInterop": true,
         "allowSyntheticDefaultImports": true,
-        "target": "es5",
+        "target": "es2018",
         "noImplicitAny": true,
         "moduleResolution": "node",
         "sourceMap": true,
         "outDir": "dist",
-        
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "lib": ["es2018", "esnext.asynciterable"]
     },
     "include": ["./src/**/*.ts"]
 }
