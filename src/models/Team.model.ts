@@ -9,7 +9,7 @@ export class Team {
     name: string;
 
     @Field()
-    age?: number;
+    score?: number;
 }
 
 @InputType()
