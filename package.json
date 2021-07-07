@@ -44,6 +44,7 @@
         "lusca": "1.6.1",
         "mongoose": "5.11.15",
         "nodemailer": "6.4.17",
+        "pg": "8.6.0",
         "reflect-metadata": "0.1.13",
         "type-graphql": "1.1.1",
         "winston": "3.3.3"
@@ -66,6 +67,7 @@
         "@types/lusca": "1.6.2",
         "@types/node": "14.14.25",
         "@types/nodemailer": "6.4.0",
+        "@types/pg": "^8.6.1",
         "@types/request": "2.48.5",
         "@types/request-promise": "4.1.47",
         "@types/supertest": "2.0.10",

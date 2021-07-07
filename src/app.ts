@@ -2,8 +2,9 @@ import express from 'express';
 import compression from 'compression'; // compresses requests
 import lusca from 'lusca';
 
-// Controllers (route handlers)
 import * as apiController from './controllers/api';
+
+import { dbClient } from './config/db.config';
 
 // Create Express server
 const app = express();
@@ -15,6 +16,7 @@ app.use(compression());
 app.use(lusca.xframe('SAMEORIGIN'));
 app.use(lusca.xssProtection(true));
 
+dbClient.connect();
 /**
  * API examples routes.
  */

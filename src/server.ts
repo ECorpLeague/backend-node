@@ -1,6 +1,8 @@
 import { ApolloServer } from 'apollo-server-express';
 import errorHandler from 'errorhandler';
 import 'reflect-metadata';
+import dotenv from 'dotenv';
+dotenv.config();
 import app from './app';
 
 import { buildSchema } from 'type-graphql';
