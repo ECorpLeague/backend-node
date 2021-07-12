@@ -14,8 +14,6 @@ app.use(compression());
 app.use(lusca.xframe('SAMEORIGIN'));
 app.use(lusca.xssProtection(true));
 
-// dbClient.connect();
-
 /**
  * API examples routes.
  */

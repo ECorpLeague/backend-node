@@ -7,8 +7,7 @@ import app from './app';
 
 import { buildSchema } from 'type-graphql';
 import { TeamResolver } from './graphql/TeamResolver';
-import { dbClient } from './config/db.config';
-import { Team } from './models/Team.model';
+import { initDB } from './config/db.config';
 
 async function bootstrap() {
     /**
@@ -18,14 +17,7 @@ async function bootstrap() {
         app.use(errorHandler());
     }
 
-    //TODO: move to db init
-    try {
-        await dbClient.authenticate();
-        console.log('Connection has been established successfully.');
-        Team.sync();
-    } catch (error) {
-        console.error('Unable to connect to the database:', error);
-    }
+    await initDB();
 
     const schema = await buildSchema({
         resolvers: [TeamResolver]
