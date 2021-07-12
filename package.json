@@ -45,7 +45,9 @@
         "mongoose": "5.11.15",
         "nodemailer": "6.4.17",
         "pg": "8.6.0",
+        "pg-hstore": "2.3.4",
         "reflect-metadata": "0.1.13",
+        "sequelize": "6.6.5",
         "type-graphql": "1.1.1",
         "winston": "3.3.3"
     },

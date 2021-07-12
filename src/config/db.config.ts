@@ -1,8 +1,10 @@
-import { Client } from 'pg';
+import { Sequelize } from 'sequelize';
 
-export const dbClient = new Client({
-    connectionString: process.env.DATABASE_URL,
-    ssl: {
-        rejectUnauthorized: false
+export const dbClient = new Sequelize(process.env.DATABASE_URL, {
+    dialectOptions: {
+        ssl: {
+            require: true, // This will help you. But you will see nwe error
+            rejectUnauthorized: false // This line will fix new error
+        }
     }
 });
