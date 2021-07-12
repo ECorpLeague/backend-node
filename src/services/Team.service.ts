@@ -3,10 +3,9 @@ import logger from '../util/logger';
 
 export default class TeamService {
     static async addTeam(newTeam: NewTeamInput): Promise<Team> {
-        const createdTeam = Team.build({ name: newTeam.name, score: 0 });
+        const createdTeam = Team.build({ name: newTeam.name });
         const result = await createdTeam.save();
-        console.log(result);
-        logger.info(`[API] Added new Team id: ${createdTeam.name}`);
+        logger.info(`[API] Added new Team id: ${result.get().id}`);
 
         return createdTeam;
     }

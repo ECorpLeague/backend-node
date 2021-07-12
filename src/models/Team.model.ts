@@ -5,7 +5,6 @@ import { dbClient } from '../config/db.config';
 interface TeamAttributes {
     id: number;
     name: string;
-    score?: number;
 }
 
 type CreationTeamAttributes = Optional<TeamAttributes, 'id'>;
@@ -17,9 +16,6 @@ export class Team extends Model<TeamAttributes, CreationTeamAttributes> {
 
     @Field()
     name: string;
-
-    @Field()
-    score?: number;
 }
 
 @InputType()
@@ -38,9 +34,6 @@ Team.init(
         name: {
             type: DataTypes.STRING,
             allowNull: false
-        },
-        score: {
-            type: DataTypes.INTEGER
         }
     },
     {
