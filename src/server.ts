@@ -17,13 +17,13 @@ async function bootstrap() {
         app.use(errorHandler());
     }
 
-    await initDB();
-
     const schema = await buildSchema({
         resolvers: [TeamResolver]
     });
     const apolloServer = new ApolloServer({ schema });
     apolloServer.applyMiddleware({ app });
+
+    await initDB();
 
     /**
      * Start Express server.

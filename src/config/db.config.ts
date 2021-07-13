@@ -1,18 +1,10 @@
-import { Sequelize } from 'sequelize';
+import Database from '../database/Database';
+import { Match } from '../models/Match.model';
 import { Team } from '../models/Team.model';
-
-export const dbClient = new Sequelize(process.env.DATABASE_URL, {
-    dialectOptions: {
-        ssl: {
-            require: true,
-            rejectUnauthorized: false
-        }
-    }
-});
 
 export const initDB = async (): Promise<void> => {
     try {
-        await dbClient.authenticate();
+        await Database.dbClient.authenticate();
         console.log('Connection has been established successfully.');
         await dbTablesInit();
         console.log('Tables was successfully created.');
@@ -22,5 +14,6 @@ export const initDB = async (): Promise<void> => {
 };
 
 const dbTablesInit = async () => {
-    await Team.sync();
+    Team.sync({ force: true });
+    Match.sync({ force: true });
 };

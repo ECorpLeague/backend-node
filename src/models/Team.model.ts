@@ -1,6 +1,6 @@
 import { DataTypes, Model, Optional } from 'sequelize';
 import { Field, ID, InputType, ObjectType } from 'type-graphql';
-import { dbClient } from '../config/db.config';
+import Database from '../database/Database';
 
 interface TeamAttributes {
     id: number;
@@ -37,7 +37,7 @@ Team.init(
         }
     },
     {
-        sequelize: dbClient,
+        sequelize: Database.dbClient,
         tableName: 'teams'
     }
 );
