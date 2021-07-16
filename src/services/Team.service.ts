@@ -3,19 +3,15 @@ import logger from '../util/logger';
 
 export default class TeamService {
     static async addTeam(newTeam: NewTeamInput): Promise<Team> {
-        const createdTeam = Team.build({ name: newTeam.name });
+        const createdTeam = Team.create({ name: newTeam.name });
         const result = await createdTeam.save();
-        logger.info(`[API] Added new Team id: ${result.get().id}`);
+        logger.info(`[API] Added new Team id: `);
 
-        return createdTeam;
+        return result;
     }
 
     static async getAllTeams(): Promise<Team[]> {
-        const teams = await Team.findAll();
+        const teams = await Team.find();
         return teams;
-    }
-
-    static async getTeamById(id: number): Promise<Team> {
-        return Team.findByPk(id);
     }
 }

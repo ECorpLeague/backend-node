@@ -1,6 +1,7 @@
 import express from 'express';
 import compression from 'compression'; // compresses requests
 import lusca from 'lusca';
+import 'reflect-metadata';
 
 import * as apiController from './controllers/api';
 

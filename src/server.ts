@@ -8,6 +8,7 @@ import app from './app';
 import { buildSchema } from 'type-graphql';
 import { TeamResolver } from './graphql/TeamResolver';
 import { initDB } from './config/db.config';
+import { MatchResolver } from './graphql/MatchResolver';
 
 async function bootstrap() {
     /**
@@ -16,14 +17,12 @@ async function bootstrap() {
     if (process.env.NODE_ENV === 'development') {
         app.use(errorHandler());
     }
-
+    await initDB();
     const schema = await buildSchema({
-        resolvers: [TeamResolver]
+        resolvers: [TeamResolver, MatchResolver]
     });
     const apolloServer = new ApolloServer({ schema });
     apolloServer.applyMiddleware({ app });
-
-    await initDB();
 
     /**
      * Start Express server.

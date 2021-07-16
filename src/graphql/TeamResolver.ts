@@ -9,11 +9,6 @@ export class TeamResolver {
         return TeamService.getAllTeams();
     }
 
-    @Query(() => Team)
-    team(@Arg('id') id: number): Promise<Team> {
-        return TeamService.getTeamById(id);
-    }
-
     @Mutation(() => Team)
     async addTeam(@Arg('newTeam') newTeam: NewTeamInput): Promise<Team> {
         return TeamService.addTeam(newTeam);

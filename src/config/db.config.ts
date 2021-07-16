@@ -1,19 +1,23 @@
-import Database from '../database/Database';
-import { Match } from '../models/Match.model';
+import 'reflect-metadata';
+
+import { createConnection, ConnectionOptions } from 'typeorm';
+import { Match } from '../models/Match.model.';
 import { Team } from '../models/Team.model';
+
+const connection: ConnectionOptions = {
+    type: 'postgres',
+    url: process.env.DATABASE_URL,
+    synchronize: true,
+    logging: true,
+    entities: [Match, Team],
+    extra: { ssl: { rejectUnauthorized: false } }
+};
 
 export const initDB = async (): Promise<void> => {
     try {
-        await Database.dbClient.authenticate();
-        console.log('Connection has been established successfully.');
-        await dbTablesInit();
-        console.log('Tables was successfully created.');
+        await createConnection(connection);
+        console.log('Successfull connected to the database');
     } catch (error) {
         console.error('Unable to connect to the database:', error);
     }
-};
-
-const dbTablesInit = async () => {
-    Team.sync({ force: true });
-    Match.sync({ force: true });
 };

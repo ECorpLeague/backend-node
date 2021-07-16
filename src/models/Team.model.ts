@@ -1,19 +1,19 @@
-import { DataTypes, Model, Optional } from 'sequelize';
 import { Field, ID, InputType, ObjectType } from 'type-graphql';
-import Database from '../database/Database';
+import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 interface TeamAttributes {
     id: number;
     name: string;
 }
 
-type CreationTeamAttributes = Optional<TeamAttributes, 'id'>;
-
 @ObjectType()
-export class Team extends Model<TeamAttributes, CreationTeamAttributes> {
+@Entity()
+export class Team extends BaseEntity {
     @Field(() => ID)
+    @PrimaryGeneratedColumn()
     id: number;
 
+    @Column()
     @Field()
     name: string;
 }
@@ -23,21 +23,3 @@ export class NewTeamInput {
     @Field()
     name: string;
 }
-
-Team.init(
-    {
-        id: {
-            type: DataTypes.INTEGER,
-            autoIncrement: true,
-            primaryKey: true
-        },
-        name: {
-            type: DataTypes.STRING,
-            allowNull: false
-        }
-    },
-    {
-        sequelize: Database.dbClient,
-        tableName: 'teams'
-    }
-);
