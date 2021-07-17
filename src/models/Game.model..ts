@@ -3,7 +3,7 @@ import { Field, ID, ObjectType } from 'type-graphql';
 
 @Entity()
 @ObjectType()
-export class Match extends BaseEntity {
+export class Game extends BaseEntity {
     @Field(() => ID)
     @PrimaryGeneratedColumn()
     id: number;

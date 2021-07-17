@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 
 import { createConnection, ConnectionOptions } from 'typeorm';
-import { Match } from '../models/Match.model.';
+import { Game } from '../models/Game.model.';
 import { Team } from '../models/Team.model';
 
 const connection: ConnectionOptions = {
@@ -9,7 +9,7 @@ const connection: ConnectionOptions = {
     url: process.env.DATABASE_URL,
     synchronize: true,
     logging: true,
-    entities: [Match, Team],
+    entities: [Game, Team],
     extra: { ssl: { rejectUnauthorized: false } }
 };
 
