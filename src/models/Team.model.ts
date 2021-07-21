@@ -1,11 +1,6 @@
 import { Field, ID, InputType, ObjectType } from 'type-graphql';
 import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
-interface TeamAttributes {
-    id: number;
-    name: string;
-}
-
 @ObjectType()
 @Entity()
 export class Team extends BaseEntity {

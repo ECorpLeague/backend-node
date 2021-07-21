@@ -10,6 +10,7 @@ import { TeamResolver } from './graphql/TeamResolver';
 import { initDB } from './config/db.config';
 import { GameResolver } from './graphql/GameResolver';
 import { RoundResolver } from './graphql/RoundResolver';
+import logger from './util/logger';
 
 async function bootstrap() {
     /**
@@ -29,9 +30,8 @@ async function bootstrap() {
      * Start Express server.
      */
     app.listen(app.get('port'), () => {
-        console.log('  App is running at http://localhost:%d in %s mode', app.get('port'), app.get('env'));
-        console.log(`GraphQL is running at http://localhost:${app.get('port')}${apolloServer.graphqlPath}`);
-        console.log('  Press CTRL-C to stop\n');
+        logger.info(`App is running at http://localhost:${app.get('port')} in ${app.get('env')} mode`);
+        logger.info(`GraphQL is running at http://localhost:${app.get('port')}${apolloServer.graphqlPath}`);
     });
 }
 
