@@ -1,5 +1,6 @@
-import { BaseEntity, Column, Entity, PrimaryColumn, PrimaryGeneratedColumn } from 'typeorm';
+import { BaseEntity, Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { Field, ID, ObjectType } from 'type-graphql';
+import { Round } from './Round.model';
 
 @Entity()
 @ObjectType()
@@ -17,4 +18,8 @@ export class Game extends BaseEntity {
     @Field()
     @Column()
     bo: string;
+
+    @Field(() => Round)
+    @ManyToOne(() => Round, (r) => r.games)
+    round: Round;
 }

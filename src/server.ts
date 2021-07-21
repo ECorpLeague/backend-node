@@ -9,6 +9,7 @@ import { buildSchema } from 'type-graphql';
 import { TeamResolver } from './graphql/TeamResolver';
 import { initDB } from './config/db.config';
 import { GameResolver } from './graphql/GameResolver';
+import { RoundResolver } from './graphql/RoundResolver';
 
 async function bootstrap() {
     /**
@@ -19,7 +20,7 @@ async function bootstrap() {
     }
     await initDB();
     const schema = await buildSchema({
-        resolvers: [TeamResolver, GameResolver]
+        resolvers: [TeamResolver, GameResolver, RoundResolver]
     });
     const apolloServer = new ApolloServer({ schema });
     apolloServer.applyMiddleware({ app });

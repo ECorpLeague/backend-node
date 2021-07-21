@@ -13,7 +13,7 @@ export class Round extends BaseEntity {
     @Column()
     type: string;
 
-    @Field(() => Game)
-    @OneToMany(() => Game, (game) => game.id)
+    @Field(() => [Game])
+    @OneToMany(() => Game, (game) => game.round, { eager: true })
     games: Game[];
 }
