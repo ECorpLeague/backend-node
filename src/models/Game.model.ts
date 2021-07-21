@@ -19,6 +19,14 @@ export class Game extends BaseEntity {
     @Column()
     bo: string;
 
+    @Field()
+    @Column()
+    firstTeamScore: number;
+
+    @Field()
+    @Column()
+    secondTeamScore: number;
+
     @Field(() => Round)
     @ManyToOne(() => Round, (r) => r.games)
     round: Round;

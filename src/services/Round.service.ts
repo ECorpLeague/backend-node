@@ -13,6 +13,8 @@ export default class RoundService {
         newGame.firstTeam = 'FirstTeam';
         newGame.secondTeam = 'SecondTeam';
         newGame.bo = 'PO1';
+        newGame.firstTeamScore = 0;
+        newGame.secondTeamScore = 2;
 
         const game = await Game.create(newGame).save();
 
